@@ -124,3 +124,6 @@ Pipfile.lock
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Additional
+bms_docs.md

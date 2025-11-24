@@ -30,3 +30,8 @@ class StockHistory(models.Model):
     change = models.IntegerField()  # positive for addition, negative for removal
     reason = models.CharField(max_length=255, blank=True)
     created_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['created_at']),
+        ]
