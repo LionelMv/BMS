@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Local
     'apps.sales',
     'apps.inventory',
+    'apps.core',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'core.User'
