@@ -36,5 +36,5 @@ class Employee(models.Model):
             models.Index(fields=["user"]),
         ]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.user.username} (Employee)"

@@ -5,7 +5,7 @@ class Supplier(models.Model):
     name = models.CharField(max_length=255)
     contact_info = models.JSONField(blank=True, null=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 class Product(models.Model):
@@ -22,7 +22,7 @@ class Product(models.Model):
             models.Index(fields=['name']),
         ]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 class StockHistory(models.Model):
