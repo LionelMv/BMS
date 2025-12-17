@@ -7,7 +7,7 @@ from apps.core.models import User, Employee
 def test_sale_decrements_stock() -> None:
     supplier = Supplier.objects.create(name="Acme")
     user = User.objects.create(username="testuser")
-    employee = Employee.objects.create(user=user)
+    employee = user.employee_profile
 
     product = Product.objects.create(name="Widget", quantity=10, price="5.00", supplier=supplier)
     customer = Customer.objects.create(name="John")
@@ -22,7 +22,7 @@ def test_sale_decrements_stock() -> None:
 @pytest.mark.django_db
 def test_sale_fails_on_insufficient_stock() -> None:
     user = User.objects.create(username="testuser2")
-    employee = Employee.objects.create(user=user)
+    employee = user.employee_profile
 
     product = Product.objects.create(name="Low", quantity=2, price="1.00")
     customer = Customer.objects.create(name="Buyer")
